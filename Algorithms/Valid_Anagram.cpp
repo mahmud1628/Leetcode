@@ -80,8 +80,11 @@ public:
  The idea is to store the count of each character in one string using a map where key is the character itself and value is the count of appearance of that character.
  Then we traverse the second string and if we don't find a character in the map we return false immediately, and if we find a character in the map then we decrease the count of that character.
  At last, if the map is empty then we return true, otherwise false.
+*/
+// ## Code : 
+#include<bits/stdc++.h>
+using namespace std;
 
- ## Code : 
 class Solution {
 public:
     bool isAnagram(string s, string t) {
@@ -106,8 +109,8 @@ public:
     }
 };
 
-## Time complexity : O(n)
-*/
+// ## Time complexity : O(n)
+
 
 
 

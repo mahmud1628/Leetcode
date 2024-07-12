@@ -155,8 +155,11 @@ public:
 ## Approach 4 (Using hash map but more efficient) : [Accepted]
 
  Take one string and sort it. Now instead of pushing it to the hash table, store it directly in the result vector.
+*/
+// ## Code :
+#include<bits/stdc++.h>
+using namespace std;
 
-## Code :
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
@@ -179,4 +182,4 @@ public:
         return res;
     }
 };
-*/
+
