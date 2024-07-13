@@ -10,14 +10,12 @@ typically using all the original letters exactly once.
  * 1 <= s.length, t.length <= 5 * 104
  * s and t consist of lowercase English letters.
 
+## Solutions: 
 
-## Approach 1 (Sorting) : [Accepted]
+### Approach 1 (Sorting) : [Accepted]
 
  We can sort the two strings and then match all the characters one by one
-
-
-## Code :
-
+ ``` cpp
     class Solution {
     public:
         bool isAnagram(string s, string t) {
@@ -30,8 +28,9 @@ typically using all the original letters exactly once.
             return true;
         }
     };
+```
 
-## Time complexity : O(nlogn)
+#### Time complexity : O(nlogn)
 
 
 ## Approach 2 (Count frequency) : [Accepted]
