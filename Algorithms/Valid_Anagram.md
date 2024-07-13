@@ -33,13 +33,11 @@ typically using all the original letters exactly once.
 #### Time complexity : O(nlogn)
 
 
-## Approach 2 (Count frequency) : [Accepted]
+### Approach 2 (Count frequency) : [Accepted]
  Count the frequency of the characters in both strings,
  if the frequency count is same in both of the strings then return true else return false.
 
-
- ## Code : 
-
+``` cpp
 class Solution {
 public:
     bool isAnagram(string s, string t) {
@@ -56,8 +54,9 @@ public:
         return true;
     }
 };
+```
 
-## Time complexity : O(n)
+#### Time complexity : O(n)
 
 ## Approach 3 (Using hash table) : [Accepted]
  The idea is to store the count of each character in one string using a map where key is the character itself and value is the count of appearance of that character.
