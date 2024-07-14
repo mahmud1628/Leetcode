@@ -1,4 +1,6 @@
-/*
+# Leetcode 49- Group Anagrams
+***
+## Problem Description : 
 Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
@@ -19,20 +21,18 @@ Input: strs = ["a"]
 Output: [["a"]]
  
 
-Constraints:
+### Constraints:
 
-1 <= strs.length <= 104
-0 <= strs[i].length <= 100
-strs[i] consists of lowercase English letters.
-*/
+ * 1 <= strs.length <= 104
+ * 0 <= strs[i].length <= 100
+ * strs[i] consists of lowercase English letters.
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+## Solutions: 
 
-/*
-## Approach 1 (Brute force) : [TLE]
+### Approach 1 (Brute force) : [TLE]
  Repeatedly Take two strings and check if they are anagram.
 
-## Code :
+``` cpp
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
@@ -70,21 +70,15 @@ public:
         return res;
     }
 };
-
-## Time Complexity : O(n^3)
-*/
-
-
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+```
+#### Time Complexity : O(n^3)
 
 
-
-/*
-## Approach 2 (Using map) : [Accepted]
+### Approach 2 (Using map) : [Accepted]
  Take a vector<int> as the key to store character frequency.
  All the strings with the same frequency will be mapped to the same key.
 
-## Code :
+``` cpp
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
@@ -113,16 +107,13 @@ public:
 
     }
 };
-*/
+```
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
-/*
-## Approach 3 (using hash table) : [Accepted]
+### Approach 3 (using hash table) : [Accepted]
 Iterate through the vector of strings.
 Sort the string and push it to the hash table.
 
-## Code :
+``` cpp
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
@@ -147,19 +138,13 @@ public:
         return res;
     }
 };
-*/
+```
 
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-
-/*
-## Approach 4 (Using hash map but more efficient) : [Accepted]
+## Approach 4 (Using hash table but more efficient) : [Accepted]
 
  Take one string and sort it. Now instead of pushing it to the hash table, store it directly in the result vector.
-*/
-// ## Code :
-#include<bits/stdc++.h>
-using namespace std;
 
+``` cpp
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
@@ -182,4 +167,5 @@ public:
         return res;
     }
 };
+```
 
