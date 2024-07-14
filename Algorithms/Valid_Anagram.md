@@ -7,14 +7,14 @@ An Anagram is a word or phrase formed by rearranging the letters of a different 
 typically using all the original letters exactly once.
 
 ### Constraints
- * 1 <= s.length, t.length <= 5 * 104
+ * 1 <= s.length, t.length <= 5 * 10<sup>4</sup>
  * s and t consist of lowercase English letters.  
 
 ## Solutions: 
 
 ### Approach 1 (Sorting) : [Accepted]
 
- We can sort the two strings and then match all the characters one by one
+ We can sort the strings and then match all the characters one by one.
  ``` cpp
     class Solution {
     public:
@@ -34,9 +34,9 @@ typically using all the original letters exactly once.
 
 
 ### Approach 2 (Count frequency) : [Accepted]
- Count the frequency of the characters in both strings,
- if the frequency count is same in both of the strings then return true else return false.
- As both strings consist of lowercase english letters, we can take two array of size 26 to store frequency count.
+ Count the frequency of the characters in both strings.<br>
+ If the frequency count is same in both of the strings then return true else return false.<br>
+ As both strings consist of lowercase english letters, we can take two array of size 26 to store frequency count.<br>
 
 ``` cpp
 class Solution {
@@ -60,9 +60,9 @@ public:
 #### Time complexity : O(n)
 
 ### Approach 3 (Using hash table) : [Accepted]
- The idea is to store the count of each character in one string using a map where key is the character itself and value is the count of appearance of that character.
- Then we traverse the second string and if we don't find a character in the map we return false immediately, and if we find a character in the map then we decrease the count of that character.
- At last, if the map is empty then we return true, otherwise false.
+ Use a map to store the frequency count of each character in the first string where key is the character itself and value is the frequency count.<br>
+ Then we traverse the second string and if we don't find a character in the map we return false immediately, and if we find a character in the map then we decrease the count of that character by 1.<br>
+ At last, if the map is empty then we return true, otherwise false.<br>
 
 ``` cpp
 class Solution {
