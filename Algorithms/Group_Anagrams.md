@@ -1,7 +1,7 @@
-# Leetcode 49- Group Anagrams
+# Leetcode 49 - Group Anagrams
 ***
 ## Problem Description : 
-Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+Given an array of strings strs, group the anagrams together. You can return the answer in any order.<br>
 
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
@@ -30,7 +30,7 @@ Output: [["a"]]
 ## Solutions: 
 
 ### Approach 1 (Brute force) : [TLE]
- Repeatedly Take two strings and check if they are anagram.
+ Repeatedly Take two strings and check if they are anagram.<br>
 
 ``` cpp
 class Solution {
@@ -71,12 +71,11 @@ public:
     }
 };
 ```
-#### Time Complexity : O(n^3)
 
 
 ### Approach 2 (Using map) : [Accepted]
- Take a vector<int> as the key to store character frequency.
- All the strings with the same frequency will be mapped to the same key.
+ Take a vector<int> as the key to store character frequency.<br>
+ All the strings with the same frequency will be mapped to the same key.<br>
 
 ``` cpp
 class Solution {
@@ -110,8 +109,9 @@ public:
 ```
 
 ### Approach 3 (using hash table) : [Accepted]
-Iterate through the vector of strings.
-Sort the string and push it to the hash table.
+Iterate through the vector of strings.<br>
+Sort a string and push it to the hash table.<br>
+Strings with the same sorted form will be mapped to the same key.<br>
 
 ``` cpp
 class Solution {
