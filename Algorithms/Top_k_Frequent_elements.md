@@ -62,9 +62,9 @@ public:
 #### Time Complexity : O(nlogn)
 
 ### Approach 2 (Using hash table and priority queue) : [Accepted]
- Similar to the previous method.
- But instead of storing the element-frequency pairs in the vector and then sorting them, we now push them to a priority queue.
- Then we extract top k items from that priority queue.
+    Similar to the previous method.
+    But instead of storing the element-frequency pairs in the vector and then sorting them, we now push them to a priority queue.
+    Then we extract top k items from that priority queue.
 
 ``` cpp
 class Solution {
