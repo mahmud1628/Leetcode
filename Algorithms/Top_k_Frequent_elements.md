@@ -1,10 +1,9 @@
-#include<bits/stdc++.h>
-using namespace std;
-
-/*
-Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
-
- 
+# Leetcode 347 - Top K Frequent Elements
+***
+## Problem Description : 
+Given an integer array nums and an integer k, return the k most frequent elements.
+<br>
+You may return the answer in any order.
 
 Example 1:
 
@@ -16,28 +15,27 @@ Input: nums = [1], k = 1
 Output: [1]
  
 
-Constraints:
+### Constraints:
 
-1 <= nums.length <= 105
--104 <= nums[i] <= 104
-k is in the range [1, the number of unique elements in the array].
-It is guaranteed that the answer is unique.
+ * 1 <= nums.length <= 105
+ * -104 <= nums[i] <= 104
+ * k is in the range [1, the number of unique elements in the array].
+ * It is guaranteed that the answer is unique.
  
 
-Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
-*/
+### Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
 
 
-/*
-## Approach 1 (using hash table and vector) : [Accepted]
+## Solutions: 
+
+### Approach 1 (using hash table and vector) : [Accepted]
     Take a map to store element-frequency.
     Traverse the array and increase the frequency of an element in the map by 1.
     Then take a vector to store all these element-frequncey pair.
     Sort the vector in increasing order.
     Take last k elements from this vector.
-## Time Complexity : O(nlogn)
 
-## Code :
+``` cpp
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
@@ -60,17 +58,15 @@ public:
         return res;
     }
 };
-*/
+```
+#### Time Complexity : O(nlogn)
 
-/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
-
-/*
- ## Approach 2 (Using hash table and priority queue) : [Accepted]
+### Approach 2 (Using hash table and priority queue) : [Accepted]
  Similar to the previous method.
  But instead of storing the element-frequency pairs in the vector and then sorting them, we now push them to a priority queue.
  Then we extract top k items from that priority queue.
- ## Time complexity : O(nlogn)
-*/
+
+``` cpp
 class Solution {
 public:
     vector<int> topKFrequent(vector<int>& nums, int k) {
@@ -93,3 +89,5 @@ public:
         return res;
     }
 };
+```
+#### Time complexity : O(nlogn)
