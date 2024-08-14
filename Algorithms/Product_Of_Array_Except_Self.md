@@ -10,11 +10,10 @@
     
 
     Example 1:
-
     Input: nums = [1,2,3,4]
     Output: [24,12,8,6]
+    
     Example 2:
-
     Input: nums = [-1,1,0,-3,3]
     Output: [0,0,9,0,0]
 
@@ -37,6 +36,9 @@
  * Now take an array answer. Initialize answer[0] = suffix[1] and answer[n-1] = prefix[n-2]
  * Take a loop and calculate answer[i] = suffix[i+1] * prefix[i-1]
  * Return the array answer.
+
+#### Time Complexity: O(n)
+#### Space Complexity: O(n)
 
 ``` cpp
 class Solution {
@@ -63,8 +65,6 @@ public:
     }
 };
 ```
-#### Time Complexity: O(n)
-#### Auxiliary Space: O(n)
 
 
 ### Approach 2[Minimize auxiliary space]: [Accepted]
@@ -74,6 +74,9 @@ public:
  * Again initialize t to 1.
  * Take another loop and calculate ans[i] *= t and t = t * nums[i].
  * Return the array ans.
+
+#### Time Complexity: O(n)
+#### Space Complexity: O(1)
 
 ``` cpp
 class Solution {
@@ -95,7 +98,5 @@ public:
     }
 };
 ```
-#### Time Complexity: O(n)
-#### Auxiliary space: o(1)
 
 
