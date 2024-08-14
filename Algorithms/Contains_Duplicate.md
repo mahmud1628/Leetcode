@@ -5,15 +5,14 @@
     and return false if every element is distinct.
 
     Example 1:
-
     Input: nums = [1,2,3,1]
     Output: true
+    
     Example 2:
-
     Input: nums = [1,2,3,4]
     Output: false
+    
     Example 3:
-
     Input: nums = [1,1,1,3,3,4,3,2,4,2]
     Output: true
 
@@ -29,6 +28,8 @@
  * If the number is already in the map (duplicate found), then return true.
  * At the end of the iteration (no duplicate found), return false.
 
+#### Time Complexity: O(n)
+
 ``` cpp
 class Solution {
 public:
@@ -43,4 +44,3 @@ public:
     }
 };
 ```
-#### Time Complexity: O(n)
