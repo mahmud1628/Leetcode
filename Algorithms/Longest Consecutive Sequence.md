@@ -64,7 +64,7 @@ public:
  * Initialize an variable ans = 0.
  * Iterate through the array.
  * Find nums[i] - 1 in the set.
- * If it is not found in the set, then nums[i] can be the first element of a subsequence. Initialize a variable temp_ans to 0 and repeatedly find the next consecutive elements of that number in the set, if found, then increase temp_ans by 1. Stop finding when a consecutive element can't be found in the set and update ans if needed.
+ * If it is not found in the set, then nums[i] can be the first element of a sequence. Initialize a variable temp_ans to 0 and repeatedly find the next consecutive elements of that number in the set, if found, then increase temp_ans by 1. Stop finding when a consecutive element can't be found in the set and update ans if needed.
  * At last, return ans.
 
 #### Time Complexity: O(n)
