@@ -31,7 +31,7 @@
 ### Approach 1 : [Accepted]
  * Take a vector.
  * Iterate through the given string.
- * Check each character if it is alphanumeric. If it is, then push it to the vector. To check if it is alphanumeric, we can use ASCII values of alphanumeric characters or we can use c++ function isalpha() and isdigit().
+     * Check each character if it is alphanumeric. If it is, then push it to the vector. To check if it is alphanumeric, we can use ASCII values of alphanumeric characters or we can use c++ function isalpha() and isdigit().
  * Now iterate through the vector and check if it is a palindrome by matching i-th character with (n - i - 1)-th character where n is the size of the vector.
 
 #### Time Complexity: O(n)
