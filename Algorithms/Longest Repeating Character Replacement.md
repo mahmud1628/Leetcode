@@ -31,7 +31,11 @@
 ### Approach 1 : [Accepted]
 
 #### Intuition:
-    We take a substring, and then check the most frequent character in that substring. It's obvious that we do not replace the most frequnt character in a substring,rather we should replace the other characters to get maximum length. Now we check that if the other characters can't be replaced with k operations. Just check whether (length_of_substring - most_frequent_character_length) is less than or equal to k. If so, then we can replace them in k operations, otherwise not. If we can replace, then this substring is a possible candidate for our expected substring and we take the length of the substring as a candidate for our result.
+We take a substring, and then check the most frequent character in that substring.<br>
+It's obvious that we do not replace the most frequnt character in a substring,rather we should replace the other characters to get maximum length.<br>
+Now we check that if the other characters can't be replaced with k operations. Just check whether (length_of_substring - most_frequent_character_length) is less than or equal to k.<br>
+If so, then we can replace them in k operations, otherwise not.<br>
+If we can replace, then this substring is a possible candidate for our expected substring and we take the length of the substring as a candidate for our result.
 
 #### Algorithm:
  * left = 0, right = 1
