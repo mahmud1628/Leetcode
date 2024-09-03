@@ -74,7 +74,7 @@ public:
 ### Approach 2 : [Accepted] 
  * Set the val of the head to 100001. From the given constraints, no node in the list has this value.
  * Now iterate through the list.
-    * If next node of head has the value 100001, then wehave visited that node already. So return true.
+    * If next node of head has the value 100001, then we have visited that node already. So return true.
     * Otherwise update head = head->next and also update the val of current head to 100001.
  * After iterating the whole list, return false.
 
