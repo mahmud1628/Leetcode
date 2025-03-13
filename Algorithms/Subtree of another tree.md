@@ -14,14 +14,26 @@
 ## Solutions: 
 
 ### Approach 1 - Brute Force : [Accepted]
- * Traverse the tree rooted at **`root`**.
-    * For each of the node, match the tree rooted at this node with the tree rooted at **`subRoot`**.
-        * If the matches, return true.
-        * Otherwise, return false.
+ * Check if two trees are identical (**`match`** function)
+
+    * If both trees are empty, they match, so return true.
+    * If one tree is empty but the other isn’t, they don’t match, so return false.
+    * If the values of the current nodes don’t match, return false.
+    * Otherwise, check if both the left subtrees and right subtrees match.
+    * If both sides match, return true, otherwise return false.
+
+ * Check if **`subRoot`** is a subtree of **`root`** (**`isSubtree`** function)
+
+    * If **`root`** is empty, return false (an empty tree can’t contain another tree).
+    * If **`root`** and **`subRoot`** are the same **`TreeNode`**, return true.
+    * If **`root`** and **`subRoot`** are identical (**`match`** function returns true), return true.
+    * Otherwise, search in the left and right subtrees of **`root`**.
+    * If either side contains **`subRoot`**, return true, otherwise return false.
 
 #### Time Complexity: O(n * m), 
 where n and m are the number of nodes in the trees rooted at **`root`** and **`subRoot`**.
-#### Space Complexity: O(1)
+#### Space Complexity: O(n + m),
+where n and m are the number of nodes in the trees rooted at **`root`** and **`subRoot`**.
 
 ``` cpp
 /**
@@ -44,29 +56,13 @@ class Solution {
         return false;
     }
 
-    void preOrder(TreeNode* root, TreeNode* subroot, bool &isSubTree) {
-
-        if(root == nullptr) return;
-
-        if(match(root,subroot)) {
-            isSubTree = true;
-            return;
-        }
-
-        preOrder(root->left, subroot,isSubTree);
-        preOrder(root->right, subroot,isSubTree);
-    }
 
 public:
     bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+        if(!root) return false;
         if(root == subRoot) return true; // tree could also be coonsidered a subtree of itself
-
-        bool isSubTree = false;
-
-        preOrder(root,subRoot,isSubTree);
-
-        return isSubTree;
-
+        if(match(root,subRoot)) return true;
+        return isSubtree(root->left, subRoot) || isSubtree(root->right, subRoot);
     }
 };
 ```
