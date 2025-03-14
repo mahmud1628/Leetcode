@@ -22,9 +22,7 @@
     * If the values of both **`p`** and **`q`** are greater than the value of the value of **`root`**, then the LCA will be in the right subtree of root.
     * In other cases, for example, value of **`p`** or value of **`q`** is equal to the value of **`root`**, **`p`** and **`q`** is in different subtrees(left and right) of **`root`**, then the LCA is simply the **`root`**.
 
-#### Time Complexity: O(h)
-#### Space Complexity: O(h)
-where h is the height of the BST rooted at **`root`**
+#### Recursive implementation:
 
 ``` cpp
 /**
@@ -46,5 +44,39 @@ public:
     }
 };
 ```
+
+#### Time Complexity: O(h)
+#### Space Complexity: O(h)
+where h is the height of the BST rooted at **`root`**
+
+#### Iterative implementation:
+
+```cpp
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+
+class Solution {
+public:
+    TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
+        while(root) {
+            if(p->val < root->val && q->val < root->val) root = root->left;
+            else if(p->val > root->val && q->val > root->val) root = root->right;
+            else return root;
+        }
+        return nullptr; // not needed actually because p and q are guranteed to exist
+    }
+};
+```
+
+#### Time complexity: O(h)
+#### Space complexity: O(1)
+
 
 
