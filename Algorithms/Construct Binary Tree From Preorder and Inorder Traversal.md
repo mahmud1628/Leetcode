@@ -19,7 +19,7 @@
 We have a recursive solution here. We know that in the preorder traversl, the first element is the root. We do the following recursively:
  * Take the **`root`** from the start of (preStart) of **`preorder`**
  * Find the **`index`** of the **`root`** from **`inorder`**
- * All the elements to the left of this **`index`** will be in the left subtree of **`root`** and all the elements to the right of this **`index`** will be in the right subtree of **`root`**. Recursively call the function accordingly. Also update the starting and ending variables for **`preorder`** and **`inorder`** while calling the function recursively.
+ * All the elements to the left of this **`index`** will be in the left subtree of **`root`** and all the elements to the right of this **`index`** will be in the right subtree of **`root`**. Recursively call the function accordingly. Also update the starting and ending variables(preStart, preEnd, inStart, inEnd) for **`preorder`** and **`inorder`** while calling the function recursively.
 
 #### Time complexity : O(n)
 #### Space complexity : O(n)
