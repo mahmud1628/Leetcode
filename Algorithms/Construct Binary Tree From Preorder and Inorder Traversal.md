@@ -44,10 +44,10 @@ class Solution {
         TreeNode * root = new TreeNode(preorder[preStart]);
 
         int index = node_index[preorder[preStart]];
-        int remaining = index - inStart;
+        int onTheLeftOfRoot = index - inStart;
 
-        root->left = buildTree(preorder,preStart+1, preStart + remaining, inorder,inStart,index - 1, node_index);
-        root->right = buildTree(preorder,preStart + remaining + 1, preEnd, inorder, index + 1, inEnd, node_index);
+        root->left = buildTree(preorder,preStart+1, preStart + onTheLeftOfRoot, inorder,inStart,index - 1, node_index);
+        root->right = buildTree(preorder,preStart + onTheLeftOfRoot + 1, preEnd, inorder, index + 1, inEnd, node_index);
 
         return root;
 
