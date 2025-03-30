@@ -27,8 +27,8 @@
 ### Approach 1 [Sorting]: [Accepted]
  * Sort in descending order and return the kth item.
 
-#### Time complexity: O(nlogn)
-#### Space complexity: O(nlogn), n is the size of the array.
+#### Time complexity: O(nlogn), n is the size of the array.
+#### Space complexity: O(1)
 
 ```cpp
 class Solution {
@@ -43,7 +43,7 @@ public:
 ### Approach 2 : [Accepted]
  * Take a min heap.
  * Repeatedly push the elements of the array to the min heap.
- * If the size of the min heap gets larger than k , then pop one element (extract the min).
+     * If the size of the min heap gets larger than k , then pop one element (extract the min).
  * Thus, at the end, we will have the largest k elements in the min heap. And the minimum of the largest k elements is the kth largest element. Therefore, return the top of the min heap at the end.
  
 #### Time complexity : O(nlogk)
