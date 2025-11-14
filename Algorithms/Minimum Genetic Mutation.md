@@ -91,3 +91,53 @@ The space complexity is O(N * L) in the worst case, where N is the number of gen
 *   The `set_bank` storing all valid genes from the bank.
 *   The `visited` set storing visited gene strings.
 Each of these can store up to N gene strings, each of length L. Given L=8, it's effectively O(N * 8), which is dominated by N.
+
+### Improving the space requirement:
+
+```cpp
+class Solution {
+public:
+    int minMutation(string startGene, string endGene, vector<string>& bank) {
+        queue<pair<string, int>> q;
+        q.push({startGene, 0});
+
+        unordered_set<string> set_bank;
+        for(string s : bank) set_bank.insert(s);
+
+        while(!q.empty()) {
+            auto [currentGene, cost] = q.front();
+            q.pop();
+            set_bank.erase(currentGene);
+            if(currentGene == endGene) return cost;
+            for(int i = 0; i < 8; i++) {
+                char ch = currentGene[i];
+                if(ch != 'A') {
+                    string temp = currentGene;
+                    temp[i] = 'A';
+                    if(set_bank.find(temp) != set_bank.end()) q.push({temp, cost + 1});
+                }
+                if(ch != 'C') {
+                    string temp = currentGene;
+                    temp[i] = 'C';
+                    if(set_bank.find(temp) != set_bank.end()) q.push({temp, cost + 1});
+                }
+                if(ch != 'G') {
+                    string temp = currentGene;
+                    temp[i] = 'G';
+                    if(set_bank.find(temp) != set_bank.end()) q.push({temp, cost + 1});
+                }
+                if(ch != 'T') {
+                    string temp = currentGene;
+                    temp[i] = 'T';
+                    if(set_bank.find(temp) != set_bank.end()) q.push({temp, cost + 1});
+                }
+            }
+
+        }
+        return -1;
+    }
+};
+```
+
+### Improvement: 
+Use the `set_bank` set only. As only the genes that are in the vector `bank` can be valid, and so can be visited, we don't need the `visited` set. When we pop one gene from queue, we also remove it from `set_bank` as it is visited and can never be visited in the future.
