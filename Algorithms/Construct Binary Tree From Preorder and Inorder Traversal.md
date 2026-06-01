@@ -24,6 +24,8 @@ We have a recursive solution here. We know that in the preorder traversl, the fi
 #### Time complexity : O(n)
 #### Space complexity : O(n)
 
+#### GPT explanation: https://chatgpt.com/c/6a1d7246-f594-8324-8e91-cc28b37ae09a
+
 ``` cpp
 /**
  * Definition for a binary tree node.
