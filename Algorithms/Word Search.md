@@ -10,18 +10,14 @@ class Solution {
         char current = board[row][column];
         board[row][column] = '#'; // mark as visited
 
-        bool right = exist(board, word, row, column + 1, index + 1);
-        if(right) return true;
-        bool down = exist(board, word, row + 1, column, index + 1);        
-        if(down) return true;
-        bool left = exist(board, word, row, column - 1, index + 1);        
-        if(left) return true;
-        bool up = exist(board, word, row - 1, column, index + 1);    
-        if(up) return true;
-
+        bool found = exist(board, word, row, column + 1, index + 1) ||
+                     exist(board, word, row + 1, column, index + 1) ||        
+                     exist(board, word, row, column - 1, index + 1) ||        
+                     exist(board, word, row - 1, column, index + 1);    
+        
         board[row][column] = current; // remove visited mark
 
-        return false;        
+        return found;        
     }
 public:
     bool exist(vector<vector<char>>& board, string word) {
@@ -69,18 +65,14 @@ class Solution {
         char current = board[row][column];
         board[row][column] = '#'; // mark as visited
 
-        bool right = exist(board, word, row, column + 1, index + 1);
-        if(right) return true;
-        bool down = exist(board, word, row + 1, column, index + 1);        
-        if(down) return true;
-        bool left = exist(board, word, row, column - 1, index + 1);        
-        if(left) return true;
-        bool up = exist(board, word, row - 1, column, index + 1);    
-        if(up) return true;
-
+        bool found = exist(board, word, row, column + 1, index + 1) ||
+                     exist(board, word, row + 1, column, index + 1) ||        
+                     exist(board, word, row, column - 1, index + 1) ||        
+                     exist(board, word, row - 1, column, index + 1);    
+        
         board[row][column] = current; // remove visited mark
 
-        return false;        
+        return found;        
     }
 public:
     bool exist(vector<vector<char>>& board, string word) {
